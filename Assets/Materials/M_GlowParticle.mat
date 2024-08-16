@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlowParticle
+  m_Name: M_GlowParticle
   m_Shader: {fileID: -6465566751694194690, guid: 4a35e04c84155674082b8e849d9ac8f1, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

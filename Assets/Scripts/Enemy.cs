@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private Rigidbody2D _rigidbody;
 
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
@@ -85,8 +86,17 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void ApplyDamage(float damage)
     {
+        _spriteRenderer.material.SetColor("_DamageColor", Color.gray);
+
         CurrentHealth -= damage;
         ShowDamage(damage);
+
+        Invoke(nameof(ChangeColor), 0.1f);
+    }
+
+    private void ChangeColor()
+    {
+        _spriteRenderer.material.SetColor("_DamageColor", Color.black);
     }
 
     public void ShowDamage(float damage)
