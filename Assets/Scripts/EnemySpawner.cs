@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
         get { return _currentHealth; }
         set
         {
-            if (_currentHealth + value <= 0)
+            if (value <= 0)
             {
                 _currentHealth = 0;
 
