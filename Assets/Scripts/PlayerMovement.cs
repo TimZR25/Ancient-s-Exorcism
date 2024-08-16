@@ -42,10 +42,6 @@ public class PlayerMovement : MonoBehaviour
         _playerAnimator.PlayAnimation(PlayerAnimator.AnimationNames.PlayerMove);
 
         _rigidbody.linearVelocity = _moveDirection * _moveSpeed;
-
-        transform.localScale = _moveDirection.x > 0
-            ? new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y)
-            : new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
     }
 
     private void Idle()

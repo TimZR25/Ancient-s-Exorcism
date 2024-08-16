@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimator : MonoBehaviour
+public class SpellBook : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] private List<Spell> _spells;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
@@ -15,36 +16,36 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        FlipToMouse();
+        RotateToMouse();
+
+        if (Input.GetMouseButton(0))
+        {
+            Spell();
+        }
     }
 
-    private void FlipToMouse()
+    private void RotateToMouse()
     {
         Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         mousePosition.Normalize();
 
 
         float rotateZ = Mathf.Atan2(mousePosition.y, mousePosition.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
 
         if (rotateZ > -90 && rotateZ < 90)
         {
-            _spriteRenderer.flipX = false;
+            _spriteRenderer.flipY = false;
 
         }
         else
         {
-            _spriteRenderer.flipX = true;
+            _spriteRenderer.flipY = true;
         }
     }
 
-    public void PlayAnimation(string animationName)
+    private void Spell()
     {
-        _animator.Play(animationName);
-    }
-
-    public struct AnimationNames
-    {
-        public const string PlayerIdle = "A_PlayerIdle";
-        public const string PlayerMove = "A_PlayerMove";
+        _spells[0].Cast();
     }
 }

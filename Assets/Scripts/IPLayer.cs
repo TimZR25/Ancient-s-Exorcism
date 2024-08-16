@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface IPLayer
+public interface IPlayer
 {
     Vector3 Position { get; }
 }

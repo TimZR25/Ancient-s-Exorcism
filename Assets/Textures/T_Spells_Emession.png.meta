@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f6b10b0eff89e254ca042cf4713a8aff
+guid: 76d8668345857494c907f1c47f19162e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2993006836426909705
-    second: T_Exorcis_Lightt_0
+      213: 8834897777293222838
+    second: T_Spells_Emession_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,11 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_0
+      name: T_Spells_Emession_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -154,124 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f75570d324b676d0800000000000000
-      internalID: -2993006836426909705
+      spriteID: 6b3637a18bcdb9a70800000000000000
+      internalID: 8834897777293222838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89ce7bda2056f864dbaa9fe2e4dc4d47
-      internalID: -234628019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a451862d4905534aa2ee3c3daf1f7ab
-      internalID: 1314205167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b92633fb0e73b084682ff1e8cf84195c
-      internalID: -539769011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36e1aa8964adf48419a7196a70d00248
-      internalID: -2042479061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd2dd9cf67d297d4aba6abd7db2f263d
-      internalID: 1120625589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_6
+      name: T_Spells_Emession_1
       rect:
         serializedVersion: 2
         x: 16
@@ -286,14 +176,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a52a06bb575d30e4eb68bbe157ae37b0
-      internalID: -246066124
+      spriteID: 01ebdc5b044e0364084df18f85f5dbf0
+      internalID: -1524859704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_7
+      name: T_Spells_Emession_2
       rect:
         serializedVersion: 2
         x: 32
@@ -308,58 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 856b7b38e8cc5b24ead8f316f379e2b9
-      internalID: -471098449
+      spriteID: ac879f88a917efd45bb185cdcabdf3b6
+      internalID: -1495026747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_8
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd31a366285fed34c9a2d86109c903b3
-      internalID: -1604798057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f2bb86c64d983f4081364c218e74801
-      internalID: 559419598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_10
+      name: T_Spells_Emession_3
       rect:
         serializedVersion: 2
         x: 0
@@ -374,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c85588cd6966414d9db872be39a789c
-      internalID: 754399789
+      spriteID: 884770309e2395149addcd7cd23a4052
+      internalID: 1855708409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_11
+      name: T_Spells_Emession_4
       rect:
         serializedVersion: 2
         x: 16
@@ -396,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77f89836ad08c814e9fa5e28a2af99e8
-      internalID: -1917877875
+      spriteID: 4634d725887ea6b45843f265e8fdb23c
+      internalID: 564318043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: T_Exorcis_Lightt_12
+      name: T_Spells_Emession_5
       rect:
         serializedVersion: 2
         x: 32
@@ -418,52 +264,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5472124a746dcfe4d9ed43671737d48f
-      internalID: 1986741254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_13
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0858dcb8cb0b4c4f9a4d6ea1363ce3b
-      internalID: 520676014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: T_Exorcis_Lightt_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d373279d1dbda9449754e6136a0f763
-      internalID: 1192476903
+      spriteID: f7dd5416bcd5ebc4697da91dd7e7ef52
+      internalID: -1697981557
       vertices: []
       indices: 
       edges: []
@@ -472,7 +274,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 399b74bb8714da141b8e68c4a5ac47df
+    spriteID: e8ce608d501217b43b837c5d7a86fdad
     internalID: 0
     vertices: []
     indices: 
@@ -482,21 +284,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      T_Exorcis_Lightt_0: -2993006836426909705
-      T_Exorcis_Lightt_1: -234628019
-      T_Exorcis_Lightt_10: 754399789
-      T_Exorcis_Lightt_11: -1917877875
-      T_Exorcis_Lightt_12: 1986741254
-      T_Exorcis_Lightt_13: 520676014
-      T_Exorcis_Lightt_14: 1192476903
-      T_Exorcis_Lightt_2: 1314205167
-      T_Exorcis_Lightt_3: -539769011
-      T_Exorcis_Lightt_4: -2042479061
-      T_Exorcis_Lightt_5: 1120625589
-      T_Exorcis_Lightt_6: -246066124
-      T_Exorcis_Lightt_7: -471098449
-      T_Exorcis_Lightt_8: -1604798057
-      T_Exorcis_Lightt_9: 559419598
+      T_Spells_Emession_0: 8834897777293222838
+      T_Spells_Emession_1: -1524859704
+      T_Spells_Emession_2: -1495026747
+      T_Spells_Emession_3: 1855708409
+      T_Spells_Emession_4: 564318043
+      T_Spells_Emession_5: -1697981557
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
