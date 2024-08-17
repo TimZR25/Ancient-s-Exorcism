@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IPlayer, IDamageable
 {
@@ -32,6 +33,8 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
 
     public Vector3 Position => transform.position;
 
+    [SerializeField] private Image _healthBar;
+
     private void Awake()
     {
         _currentHealth = _maxHealth;
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
     public void ApplyDamage(float damage)
     {
         CurrentHealth -= damage;
+
+        _healthBar.fillAmount = CurrentHealth/_maxHealth;
 
         if (CurrentHealth <= 0) return;
         ShowDamage(damage);
