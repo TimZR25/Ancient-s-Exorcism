@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class SpellBook : MonoBehaviour
@@ -8,6 +9,8 @@ public class SpellBook : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private Camera _mainCamera;
+
+    private CinemachineCamera _camera;
 
     private void Awake()
     {

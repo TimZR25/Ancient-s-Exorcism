@@ -6,6 +6,8 @@ public class EnemyBullet : Bullet
     {
         if (collision.TryGetComponent(out Bullet bullet)) return;
 
+        if (collision.TryGetComponent(out Enemy enemy)) return;
+
         if (collision.TryGetComponent(out IPlayer player))
         {
             if (collision.TryGetComponent(out IDamageable damageable))
@@ -15,13 +17,12 @@ public class EnemyBullet : Bullet
                 SpawnParticle();
 
                 Destroy(gameObject);
+
+                return;
             }
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.isTrigger)
+        if (collision.isTrigger)
         {
             SpawnParticle();
 
