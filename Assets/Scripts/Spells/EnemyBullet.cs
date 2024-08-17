@@ -17,8 +17,11 @@ public class EnemyBullet : Bullet
                 Destroy(gameObject);
             }
         }
+    }
 
-        if (collision.isTrigger && collision.TryGetComponent(out IDamageable d) == false)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.isTrigger)
         {
             SpawnParticle();
 

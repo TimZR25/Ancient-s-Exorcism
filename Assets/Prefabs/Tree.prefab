@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2373484543462236178}
   - component: {fileID: 7639579840103715503}
   - component: {fileID: 5201715595420450594}
+  - component: {fileID: 486627870781424258}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -168,3 +169,39 @@ MonoBehaviour:
   m_Center: {x: 0, y: -0.7, z: 0}
   m_Area: 1
   m_AffectedAgents: ffffffff
+--- !u!58 &486627870781424258
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169058186380860475}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.75}
+  m_Radius: 0.3

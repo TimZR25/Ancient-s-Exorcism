@@ -107,6 +107,7 @@ MonoBehaviour:
   _maxHealth: 50
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
   _image: {fileID: 6915395211020769637}
+  _timeBetweenSpawn: 15
 --- !u!61 &6564315600035984083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

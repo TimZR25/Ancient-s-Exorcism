@@ -37,6 +37,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
 
     [SerializeField] private Image _image;
 
+    [SerializeField] private float _timeBetweenSpawn;
+
     private void Awake()
     {
         _currentHealth = _maxHealth;
@@ -60,7 +62,7 @@ public class EnemySpawner : MonoBehaviour, IDamageable
 
         _enemyList.Add(enemy);
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(_timeBetweenSpawn);
 
         StartCoroutine(Spawn());
     }

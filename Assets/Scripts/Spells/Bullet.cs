@@ -33,6 +33,4 @@ public abstract class Bullet : MonoBehaviour
 
         Destroy(particle.gameObject, particle.main.duration);
     }
-
-    
 }
