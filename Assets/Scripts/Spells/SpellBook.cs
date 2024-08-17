@@ -16,7 +16,7 @@ public class SpellBook : MonoBehaviour
 
     private void Update()
     {
-        RotateToMouse();
+        RotateTo(_mainCamera.ScreenToWorldPoint(Input.mousePosition));
 
         if (Input.GetMouseButton(0))
         {
@@ -24,9 +24,9 @@ public class SpellBook : MonoBehaviour
         }
     }
 
-    private void RotateToMouse()
+    private void RotateTo(Vector3 to)
     {
-        Vector3 mousePosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 mousePosition = to - transform.position;
         mousePosition.Normalize();
 
 

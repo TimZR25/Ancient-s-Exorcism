@@ -1,13 +1,13 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _hitParticle;
 
     private Rigidbody2D _rigidbody;
 
-    private float _damage;
+    protected float _damage;
 
     public void Inject(float damage)
     {
@@ -27,27 +27,12 @@ public class Bullet : MonoBehaviour
         _rigidbody.linearVelocity = transform.right * speed;
     }
 
-    private void OnDestroy()
+    protected void SpawnParticle()
     {
         ParticleSystem particle = Instantiate(_hitParticle, transform.position, _hitParticle.transform.rotation);
 
         Destroy(particle.gameObject, particle.main.duration);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out Bullet bullet)) return;
-
-        if (collision.TryGetComponent(out IDamageable damageable))
-        {
-            damageable.ApplyDamage(_damage);
-            
-            Destroy(gameObject);
-        }
-
-        if (collision.isTrigger)
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 }

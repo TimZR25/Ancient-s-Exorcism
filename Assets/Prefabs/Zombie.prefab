@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5781207362861141899}
-  - component: {fileID: 7922476673502300909}
+  - component: {fileID: 8264445619760176458}
   - component: {fileID: 234381369072763714}
   - component: {fileID: 5609251324945455432}
   - component: {fileID: 7226244881037857608}
@@ -146,7 +146,7 @@ Transform:
   - {fileID: 2195719722060045437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7922476673502300909
+--- !u!114 &8264445619760176458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,12 +155,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 9176434549829330025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a48a797bb10dc48ae5d3ba6c7fa10c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0115552e80dda9f4ea58ba143111889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 10
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
-  _damage: 5
+  _bodyDamage: 5
   _spriteRenderer: {fileID: 7485638414851862478}
 --- !u!195 &234381369072763714
 NavMeshAgent:

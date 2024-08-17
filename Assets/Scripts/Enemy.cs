@@ -1,14 +1,13 @@
 using UnityEngine;
 using UnityEngine.AI;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody2D))]
-public class Enemy : MonoBehaviour, IDamageable
+public abstract class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _maxHealth;
     [SerializeField] private DamageCanvas _damageCanvas;
 
-    [SerializeField] private float _damage;
+    [SerializeField] private float _bodyDamage;
 
     private float _currentHealth;
     public float CurrentHealth
@@ -28,7 +27,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    private NavMeshAgent _agent;
+    protected NavMeshAgent _agent;
 
     public bool IsStopped
     {
@@ -55,7 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
         _currentHealth = _maxHealth;
     }
 
-    private IPlayer _player;
+    protected IPlayer _player;
 
     public void Inject(IPlayer pLayer)
     {
@@ -72,15 +71,20 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void FlipToTarget(Vector3 target)
     {
-        if (target.x - transform.position.x > 0)
+        Vector3 direction = target - transform.position;
+        direction.Normalize();
+
+
+        float rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        if (rotateZ > -90 && rotateZ < 90)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x),
-                transform.localScale.y, transform.localScale.z);
+            _spriteRenderer.flipX = false;
+
         }
         else
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x),
-                transform.localScale.y, transform.localScale.z);
+            _spriteRenderer.flipX = true;
         }
     }
 
@@ -125,7 +129,7 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             if (collision.TryGetComponent(out IDamageable damageable))
             {
-                damageable.ApplyDamage(_damage);
+                damageable.ApplyDamage(_bodyDamage);
             }
         }
     }
