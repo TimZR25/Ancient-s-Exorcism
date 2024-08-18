@@ -141,7 +141,7 @@ MonoBehaviour:
   _bodyDamage: 5
   _spriteRenderer: {fileID: 7033489782134036088}
   _bullet: {fileID: 238029335553996748, guid: c7eb7a1e98835d84197f06b81970161f, type: 3}
-  _damage: 0
+  _damage: 10
   _firePoint: {fileID: 6345829457306496200}
   _bulletSpeed: 5
   _shotDelay: 3
