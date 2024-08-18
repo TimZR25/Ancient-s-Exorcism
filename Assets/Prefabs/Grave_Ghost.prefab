@@ -104,10 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _zombiePrefab: {fileID: 2741594595158939247, guid: 128fb29c49e39c54e913f358a95a550f, type: 3}
-  _maxHealth: 50
+  _maxHealth: 15
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
   _image: {fileID: 1230154344692916657}
-  _timeBetweenSpawn: 5
+  _timeBetweenSpawn: 20
 --- !u!61 &1328495017205622408
 BoxCollider2D:
   m_ObjectHideFlags: 0

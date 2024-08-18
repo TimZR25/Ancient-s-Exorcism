@@ -235,6 +235,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: T_UI_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6674f927933634eb9e46c6fc122b03
+      internalID: 87473357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -253,6 +275,7 @@ TextureImporter:
       T_UI_1: -3360550396643988530
       T_UI_2: 4074151456589691225
       T_UI_3: -968390250607530017
+      T_UI_4: 87473357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

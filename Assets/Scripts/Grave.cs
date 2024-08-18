@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class EnemySpawner : MonoBehaviour, IDamageable
+public class Grave : MonoBehaviour, IDamageable
 {
     [SerializeField] private Enemy _zombiePrefab;
 
@@ -23,6 +24,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
             {
                 _currentHealth = 0;
 
+                Destroyed?.Invoke(this);
+
                 Destroy(gameObject);
                 return;
             }
@@ -38,6 +41,8 @@ public class EnemySpawner : MonoBehaviour, IDamageable
     [SerializeField] private Image _image;
 
     [SerializeField] private float _timeBetweenSpawn;
+
+    public UnityAction<Grave> Destroyed;
 
     private void Awake()
     {

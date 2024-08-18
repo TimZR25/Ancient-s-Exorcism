@@ -4,15 +4,15 @@ public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
-    private EnemySpawner[] _enemySpawners;
+    private Graveyard[] _graveyards;
 
     private void Awake()
     {
-        _enemySpawners = FindObjectsByType<EnemySpawner>(FindObjectsSortMode.None);
+        _graveyards = FindObjectsByType<Graveyard>(FindObjectsSortMode.None);
 
-        foreach (EnemySpawner enemySpawner in _enemySpawners)
+        foreach (Graveyard graveyard in _graveyards)
         {
-            enemySpawner.Inject(_player);
+            graveyard.Inject(_player);
         }
     }
 }
