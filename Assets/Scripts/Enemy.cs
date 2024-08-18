@@ -58,15 +58,17 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         _currentHealth = _maxHealth;
     }
 
-    protected IPlayer _player;
+    protected Player _player;
 
-    public void Inject(IPlayer pLayer)
+    public void Inject(Player player)
     {
-        _player = pLayer;
+        _player = player;
     }
 
     private void FixedUpdate()
     {
+        if (_player is null) return;
+
         _agent.SetDestination(_player.Position);
 
 

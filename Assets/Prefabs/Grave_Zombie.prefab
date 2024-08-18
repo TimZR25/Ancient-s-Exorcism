@@ -107,7 +107,7 @@ MonoBehaviour:
   _maxHealth: 25
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
   _image: {fileID: 2716062919365180362}
-  _timeBetweenSpawn: 45
+  _timeBetweenSpawn: 35
 --- !u!61 &6568701151175851591
 BoxCollider2D:
   m_ObjectHideFlags: 0

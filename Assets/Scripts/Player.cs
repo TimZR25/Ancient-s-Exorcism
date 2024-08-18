@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IPlayer, IDamageable
@@ -18,7 +19,8 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
             {
                 _currentHealth = 0;
 
-                Debug.Log("Player is Dead");
+                Dead?.Invoke();
+                gameObject.SetActive(false);
                 return;
             }
 
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
     [SerializeField] private GodFinger _godFinger;
     [SerializeField][Range(0, 100)] private float _chanceToSpawnGodFinger;
     [SerializeField] private float _radiusSpawn;
+    [SerializeField] private float _delayToSpawnGod;
+    private float _timeToSpawnGod;
 
     public Vector3 Position => transform.position;
 
@@ -49,11 +53,29 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
     [SerializeField] private AudioClip _hurtClip;
     private AudioSource _audioSource;
 
+    public UnityAction Dead;
+
     private void Awake()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         _currentHealth = _maxHealth;
 
-        _audioSource = GetComponent<AudioSource>();
+        _timeToSpawnGod = _delayToSpawnGod;
+    }
+
+    private void Update()
+    {
+        if (_timeToSpawnGod > 0)
+        {
+            _timeToSpawnGod -= Time.deltaTime;
+        }
+        else
+        {
+            SpawnGodFinger();
+
+            _timeToSpawnGod = _delayToSpawnGod;
+        }
     }
 
     public void ApplyDamage(float damage)
@@ -66,7 +88,11 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
 
         ShowDamage(damage);
 
-        SpawnGodFinger();
+        float chance = Random.Range(0, 100);
+        if (chance <= _chanceToSpawnGodFinger)
+        {
+            SpawnGodFinger();
+        }
     }
 
     public void ShowDamage(float damage)
@@ -129,17 +155,12 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
 
     private void SpawnGodFinger()
     {
-        float chance = Random.Range(0, 100);
+        float x = Random.Range(-1, 1) * _radiusSpawn;
+        float y = Random.Range(-1, 1) * _radiusSpawn;
 
-        if (chance <= _chanceToSpawnGodFinger)
-        {
-            float x = Random.Range(-1, 1) * _radiusSpawn;
-            float y = Random.Range(-1, 1) * _radiusSpawn;
+        Vector2 spawnPoint = new Vector2(Position.x + x, Position.y + y);
 
-            Vector2 spawnPoint = new Vector2(Position.x + x, Position.y + y);
-
-            Instantiate(_godFinger, spawnPoint, Quaternion.identity);
-        }
+        Instantiate(_godFinger, spawnPoint, Quaternion.identity);
     }
 
     public void ApplyHeal(float amount)

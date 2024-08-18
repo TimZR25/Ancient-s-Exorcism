@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Graveyard : MonoBehaviour
 {
@@ -7,7 +8,9 @@ public class Graveyard : MonoBehaviour
 
     public int GravesCount => _graves.Count;
 
-    public void Inject(IPlayer player)
+    public UnityAction Destroyed;
+
+    public void Inject(Player player)
     {
         foreach (var grave in _graves)
         {
@@ -25,7 +28,7 @@ public class Graveyard : MonoBehaviour
 
         if (_graves.Count <= 0)
         {
-            Debug.Log("Graveyard defeat");
+            Destroyed?.Invoke();
         }
     }
 }

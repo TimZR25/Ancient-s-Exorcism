@@ -8,6 +8,8 @@ public class EnemyBullet : Bullet
 
         if (collision.TryGetComponent(out Enemy enemy)) return;
 
+        if (collision.TryGetComponent(out HealingTrap healingTrap)) return;
+
         if (collision.TryGetComponent(out IPlayer player))
         {
             if (collision.TryGetComponent(out IDamageable damageable))

@@ -10,7 +10,7 @@ public class Grave : MonoBehaviour, IDamageable
 
     private List<Enemy> _enemyList = new List<Enemy>();
 
-    private IPlayer _player;
+    private Player _player;
 
     [SerializeField] private float _maxHealth;
 
@@ -54,9 +54,9 @@ public class Grave : MonoBehaviour, IDamageable
         StartCoroutine(Spawn());
     }
 
-    public void Inject(IPlayer pLayer)
+    public void Inject(Player player)
     {
-        _player = pLayer;
+        _player = player;
     }
 
     private IEnumerator Spawn()
