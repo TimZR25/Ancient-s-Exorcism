@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    private Camera _camera;
-
     private RectTransform _transform;
 
     private void Start()
     {
         _transform = GetComponent<RectTransform>();
-
-        _camera = Camera.main;
 
         Cursor.visible = false;
     }
@@ -19,8 +15,6 @@ public class Crosshair : MonoBehaviour
     {
         Vector3 mouseWorldPosition = Input.mousePosition;
 
-       // mouseWorldPosition.z = 0f;
-
-        transform.position = mouseWorldPosition;
+        _transform.position = mouseWorldPosition;
     }
 }
