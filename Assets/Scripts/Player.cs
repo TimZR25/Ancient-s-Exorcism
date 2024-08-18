@@ -44,15 +44,23 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
 
     public Vector3 Position => transform.position;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip _healingClip;
+    [SerializeField] private AudioClip _hurtClip;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
         _currentHealth = _maxHealth;
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void ApplyDamage(float damage)
     {
         CurrentHealth -= damage;
+
+        _audioSource.PlayOneShot(_hurtClip);
 
         if (CurrentHealth <= 0) return;
 
@@ -137,5 +145,7 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
     public void ApplyHeal(float amount)
     {
         CurrentHealth += amount;
+
+        _audioSource.PlayOneShot(_healingClip);
     }
 }

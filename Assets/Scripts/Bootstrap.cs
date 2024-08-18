@@ -4,6 +4,10 @@ public class Bootstrap : MonoBehaviour
 {
     [SerializeField] private Player _player;
 
+    [SerializeField] private AudioManager _audioManager;
+
+    [SerializeField] private SpellBook _spellBook;
+
     private Graveyard[] _graveyards;
 
     private void Awake()
@@ -14,5 +18,7 @@ public class Bootstrap : MonoBehaviour
         {
             graveyard.Inject(_player);
         }
+
+        _spellBook.Inject(_audioManager);
     }
 }

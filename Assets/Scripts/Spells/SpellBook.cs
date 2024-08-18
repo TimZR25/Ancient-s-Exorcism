@@ -12,6 +12,8 @@ public class SpellBook : MonoBehaviour
 
     private CinemachineCamera _camera;
 
+    private AudioManager _audioManager;
+
     private void Awake()
     {
         _mainCamera = Camera.main;
@@ -25,6 +27,11 @@ public class SpellBook : MonoBehaviour
         {
             Spell();
         }
+    }
+
+    public void Inject(AudioManager audioManager)
+    {
+        _audioManager = audioManager;
     }
 
     private void RotateTo(Vector3 to)
@@ -49,6 +56,9 @@ public class SpellBook : MonoBehaviour
 
     private void Spell()
     {
-        _spells[0].Cast();
+        if (_spells[0].TryCast())
+        {
+            _audioManager.PlaySFX(_audioManager.LightBolt);
+        }
     }
 }

@@ -42,11 +42,15 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    private AudioSource _audioSource;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
 
         _rigidbody = GetComponent<Rigidbody2D>();
+
+        _audioSource = GetComponent<AudioSource>();
 
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
@@ -91,6 +95,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     public void ApplyDamage(float damage)
     {
         _spriteRenderer.material.SetColor("_DamageColor", Color.gray);
+
+        _audioSource.Play();
 
         CurrentHealth -= damage;
         ShowDamage(damage);

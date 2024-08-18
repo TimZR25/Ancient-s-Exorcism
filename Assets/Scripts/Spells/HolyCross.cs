@@ -45,9 +45,9 @@ public class HolyCross : Spell
         }
     }
 
-    public override void Cast()
+    public override bool TryCast()
     {
-        if (_isCooldown == true) return;
+        if (_isCooldown == true) return false;
 
         Bullet bullet = Instantiate(_bullet, _firePoint.position, _firePoint.rotation);
 
@@ -61,5 +61,7 @@ public class HolyCross : Spell
 
         _delayTime = _castDelay;
         _isCooldown = true;
+
+        return true;
     }
 }

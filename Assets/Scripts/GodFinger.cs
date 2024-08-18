@@ -10,6 +10,6 @@ public class GodFinger : MonoBehaviour
     {
         Instantiate(_healingTrap, _spawnPoint.position, Quaternion.identity);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 }
