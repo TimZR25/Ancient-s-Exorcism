@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class Grave : MonoBehaviour, IDamageable
 {
-    [SerializeField] private Enemy _zombiePrefab;
+    [SerializeField] private Enemy _enemyPrefab;
+
+    [SerializeField] private int _maxEnemies;
 
     private List<Enemy> _enemyList = new List<Enemy>();
 
@@ -61,7 +63,9 @@ public class Grave : MonoBehaviour, IDamageable
 
     private IEnumerator Spawn()
     {
-        Enemy enemy = Instantiate(_zombiePrefab, transform.position, Quaternion.identity);
+        if (_enemyList.Count >= _maxEnemies) yield return null;
+
+        Enemy enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
 
         enemy.Inject(_player);
 
@@ -72,10 +76,12 @@ public class Grave : MonoBehaviour, IDamageable
         StartCoroutine(Spawn());
     }
 
-    public void ApplyDamage(float damage)
+    public bool TryApplyDamage(float damage)
     {
         CurrentHealth -= damage;
         ShowDamage(damage);
+
+        return true;
     }
 
     public void ShowDamage(float damage)

@@ -103,11 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f8b783511718a42901769d0cff3b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _zombiePrefab: {fileID: 8264445619760176458, guid: 15ee7271b4026dd48896679b45d8ed28, type: 3}
-  _maxHealth: 25
+  _enemyPrefab: {fileID: 8264445619760176458, guid: 15ee7271b4026dd48896679b45d8ed28, type: 3}
+  _maxEnemies: 4
+  _maxHealth: 10
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
   _image: {fileID: 2716062919365180362}
-  _timeBetweenSpawn: 35
+  _timeBetweenSpawn: 30
 --- !u!61 &6568701151175851591
 BoxCollider2D:
   m_ObjectHideFlags: 0

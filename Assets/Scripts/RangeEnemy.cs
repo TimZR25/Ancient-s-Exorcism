@@ -28,7 +28,9 @@ public class RangeEnemy : Enemy
 
         if (_time <= 0)
         {
-            if (Vector3.Distance(transform.position, _player.Position) <= _agent.stoppingDistance)
+            float distanceMultiplier = Random.Range(0.5f, 1.5f);
+
+            if (Vector3.Distance(transform.position, _player.Position) <= _agent.stoppingDistance * distanceMultiplier)
             {
                 Shoot();
             }
@@ -37,7 +39,7 @@ public class RangeEnemy : Enemy
 
     private void Shoot()
     {
-        _time = _shotDelay;
+        _time = _shotDelay * Random.Range(0.5f, 1.5f);
 
         Bullet bullet = Instantiate(_bullet, _firePoint.position, Quaternion.identity);
 

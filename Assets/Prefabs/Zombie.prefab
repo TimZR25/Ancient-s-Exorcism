@@ -159,10 +159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0115552e80dda9f4ea58ba143111889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 20
+  _maxHealth: 10
   _damageCanvas: {fileID: 2625612538233313204, guid: 55fbbd2c4a3c5b14aaa9a83ca0434db4, type: 3}
-  _bodyDamage: 5
+  _bodyDamage: 10
   _spriteRenderer: {fileID: 7485638414851862478}
+  _isOneTouched: 0
 --- !u!195 &234381369072763714
 NavMeshAgent:
   m_ObjectHideFlags: 0

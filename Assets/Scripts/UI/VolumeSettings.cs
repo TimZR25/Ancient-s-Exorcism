@@ -2,15 +2,28 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class VolumeSettings : MonoBehaviour
+public class VolumeSettings : UI
 {
     [SerializeField] private AudioMixer _audioMixer;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _sfxSlider;
 
-    [SerializeField] private MenuUI _menuUI;
+    [SerializeField] private UI _uiToReturn;
 
     private void Start()
+    {
+        Init();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Return();
+        }
+    }
+
+    public void Init()
     {
         if (PlayerPrefs.HasKey("MusicVolume"))
         {
@@ -48,7 +61,7 @@ public class VolumeSettings : MonoBehaviour
 
     public void Return()
     {
-        gameObject.SetActive(false);
-        _menuUI.gameObject.SetActive(true);
+        Hide();
+        _uiToReturn.Show();
     }
 }

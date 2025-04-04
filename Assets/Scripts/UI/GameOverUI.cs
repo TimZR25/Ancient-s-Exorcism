@@ -1,8 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameOverUI : MonoBehaviour
+public class GameOverUI : UI
 {
+    [SerializeField] private Text _timeRecord;
+
+    public void Init(int record)
+    {
+        _timeRecord.text = "you lived " + record.ToString() + " s";
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -11,15 +19,5 @@ public class GameOverUI : MonoBehaviour
     public void Menu(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-    }
-
-    private void OnEnable()
-    {
-        Time.timeScale = 0.0f;
-    }
-
-    private void OnDisable()
-    {
-        Time.timeScale = 1.0f;
     }
 }

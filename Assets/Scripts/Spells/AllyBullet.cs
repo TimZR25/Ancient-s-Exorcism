@@ -12,7 +12,7 @@ public class AllyBullet : Bullet
 
         if (collision.TryGetComponent(out IDamageable damageable))
         {
-            damageable.ApplyDamage(_damage);
+            damageable.TryApplyDamage(_damage);
 
             SpawnParticle();
 

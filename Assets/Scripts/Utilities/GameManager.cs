@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private WinUI _winUI;
 
+    [SerializeField] private Timer _timer;
+
     private int _graveyardCount;
 
     public void Inject(int graveyardCount)
@@ -15,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDead()
     {
+        _gameOverUI.Init(_timer.CurrentTime);
+
+        _timer.gameObject.SetActive(false);
         _gameOverUI.gameObject.SetActive(true);
     }
 
@@ -24,6 +29,9 @@ public class GameManager : MonoBehaviour
 
         if (_graveyardCount <= 0)
         {
+            _winUI.Init(_timer.CurrentTime);
+
+            _timer.gameObject.SetActive(false);
             _winUI.gameObject.SetActive(true);
         }
     }

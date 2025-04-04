@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealingTrap : MonoBehaviour
+public class HealingTrap : GodMiracle
 {
     [SerializeField] private float _healAmount;
 

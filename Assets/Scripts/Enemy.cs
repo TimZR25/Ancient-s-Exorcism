@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngineInternal;
 
 [RequireComponent(typeof(NavMeshAgent), typeof(Rigidbody2D))]
 public abstract class Enemy : MonoBehaviour, IDamageable
@@ -7,7 +8,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float _maxHealth;
     [SerializeField] private DamageCanvas _damageCanvas;
 
-    [SerializeField] private float _bodyDamage;
+    [SerializeField] protected float _bodyDamage;
 
     private float _currentHealth;
     public float CurrentHealth
@@ -44,6 +45,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
 
     private AudioSource _audioSource;
 
+    protected Player _player;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -58,7 +61,6 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         _currentHealth = _maxHealth;
     }
 
-    protected Player _player;
 
     public void Inject(Player player)
     {
@@ -94,7 +96,7 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void ApplyDamage(float damage)
+    public bool TryApplyDamage(float damage)
     {
         _spriteRenderer.material.SetColor("_DamageColor", Color.gray);
 
@@ -104,6 +106,8 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         ShowDamage(damage);
 
         Invoke(nameof(ChangeColor), 0.1f);
+
+        return true;
     }
 
     private void ChangeColor()
@@ -131,13 +135,18 @@ public abstract class Enemy : MonoBehaviour, IDamageable
         _rigidbody.AddForceAtPosition(to, from, ForceMode2D.Impulse);
     }
 
+    protected virtual void ApplyBodyDamage(IDamageable damageable)
+    {
+        damageable.TryApplyDamage(_bodyDamage);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out IPlayer player))
         {
             if (collision.TryGetComponent(out IDamageable damageable))
             {
-                damageable.ApplyDamage(_bodyDamage);
+                ApplyBodyDamage(damageable);
             }
         }
     }

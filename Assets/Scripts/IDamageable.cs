@@ -1,6 +1,6 @@
 public interface IDamageable
 {
     float CurrentHealth { get; set; }
-    void ApplyDamage(float damage);
+    bool TryApplyDamage(float damage);
     void ShowDamage(float damage);
 }

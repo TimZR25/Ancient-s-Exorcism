@@ -14,13 +14,14 @@ public class EnemyBullet : Bullet
         {
             if (collision.TryGetComponent(out IDamageable damageable))
             {
-                damageable.ApplyDamage(_damage);
+                if (damageable.TryApplyDamage(_damage))
+                {
+                    SpawnParticle();
 
-                SpawnParticle();
+                    Destroy(gameObject);
 
-                Destroy(gameObject);
-
-                return;
+                    return;
+                }
             }
         }
 

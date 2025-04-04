@@ -1,9 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuUI : MonoBehaviour
+public class MenuUI : UI
 {
     [SerializeField] private VolumeSettings _volumeSettings;
+
+    private void Start()
+    {
+        _volumeSettings.Init();
+    }
 
     public void Play(string sceneName)
     {
@@ -12,7 +17,7 @@ public class MenuUI : MonoBehaviour
 
     public void Settings()
     {
-        gameObject.SetActive(false);
-        _volumeSettings.gameObject.SetActive(true);
+        Hide();
+        _volumeSettings.Show();
     }
 }

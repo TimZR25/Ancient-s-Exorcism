@@ -21,6 +21,8 @@ public class SpellBook : MonoBehaviour
 
     private void Update()
     {
+        if (Time.deltaTime <= 0) return;
+
         RotateTo(_mainCamera.ScreenToWorldPoint(Input.mousePosition));
 
         if (Input.GetMouseButton(0))

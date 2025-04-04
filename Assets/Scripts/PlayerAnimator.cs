@@ -15,6 +15,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
+        if (Time.deltaTime <= 0) return;
+
         FlipToMouse();
     }
 

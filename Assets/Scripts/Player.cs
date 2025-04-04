@@ -33,6 +33,9 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
     [SerializeField] private float _pushRadius;
     [SerializeField] private float _pushForce;
 
+    [SerializeField] private float _delayInvulnerability;
+    private float _timeInvulnerability;
+
     [Header("UI")]
     [SerializeField] private Image _healthBar;
 
@@ -66,9 +69,14 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
 
     private void Update()
     {
+        if (_timeInvulnerability > 0)
+        {
+            _timeInvulnerability -= Time.deltaTime;
+        }
+
         if (_timeToSpawnGod > 0)
         {
-            _timeToSpawnGod -= Time.deltaTime;
+            _timeToSpawnGod -= Time.deltaTime * (_maxHealth / _currentHealth);
         }
         else
         {
@@ -78,13 +86,15 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
         }
     }
 
-    public void ApplyDamage(float damage)
+    public bool TryApplyDamage(float damage)
     {
+        if (_timeInvulnerability > 0) return false;
+
         CurrentHealth -= damage;
 
-        _audioSource.PlayOneShot(_hurtClip);
+        if (CurrentHealth <= 0) return false;
 
-        if (CurrentHealth <= 0) return;
+        _audioSource.PlayOneShot(_hurtClip);
 
         ShowDamage(damage);
 
@@ -93,6 +103,10 @@ public class Player : MonoBehaviour, IPlayer, IDamageable
         {
             SpawnGodFinger();
         }
+
+        _timeInvulnerability = _delayInvulnerability;
+
+        return true;
     }
 
     public void ShowDamage(float damage)
